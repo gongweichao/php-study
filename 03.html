@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面向过程来切换页面风格</title>
+
+    <style>
+        div{
+            height: 200px;
+            width:300px;
+            border: 2px solid;
+            padding: 2px;margin-top:5px ;
+        }
+    </style>
+    <script>
+        function t() {
+            var sel =  document.getElementsByTagName('select')[0];
+            if(sel.value=='male'){
+                document.getElementById('content').style.backgroundColor = 'gray';
+                document.getElementById('ad').innerHTML = '汽车';
+            } else if (sel.value=='female'){
+                document.getElementById('content').style.backgroundColor = 'pink';
+                document.getElementById('ad').innerHTML = '衣服';
+            }
+         }
+         /*
+            这个时候如果需要新添加一个study区，学习内容要要随之变化
+            这个时候就需要对t函数进行改动了，对于修改就有开放了
+          */
+
+    </script>
+
+</head>
+<body>
+    <h1>面向过程，不用任何模式切换页面风格</h1>
+    <select name="" id="" onchange="t()">
+        <option value="male">男士风格</option>
+        <option value="female">女士风格</option>
+
+    </select>
+
+    <div id="content">我是内容</div>
+    <div id="ad">我是广告</div>
+</body>
+</html>

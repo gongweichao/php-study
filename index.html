@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>LERA NEW ENERGY POWER TECHNOLOGY</title>
+    <meta property="og:title" content="LERA NEW ENERGY POWER TECHNOLOGY" />
+    <meta property="og:keywords" content="LERA" />
+    <meta property="og:description" content="LERA is a global leader and innovator in the development and manufacturing of new-energy power systems, outdoor power equipment and power tools"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://www.lera.com.cn/"/>
+    <meta property="og:site_name" content="LERA NEW ENERGY POWER TECHNOLOGY"/>
+    <meta property="og:image" content="http://www.lera.com.cn/images/logo.jpg" />
+    <meta name="title" content="LERA NEW ENERGY POWER TECHNOLOGY" />
+    <meta name="keywords" content="LERA" />
+    <meta name="description" content="LERA is a global leader and innovator in the development and manufacturing of new-energy power systems, outdoor power equipment and power tools"/>
+
+    <!--<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta name="Robots" content="all"/>
+    <link href="style/index.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="images/logo.ico" />
+    <!--<script type="text/javascript" src="js/list.js"></script>-->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+    <script type="text/javascript">
+        function banner(){
+            var bn_id = 0;
+            var bn_id2= 1;
+            var speed33=5000;
+            var qhjg = 1;
+            var MyMar33;
+            $("#banner .d1").hide();
+            $("#banner .d1").eq(0).fadeIn("slow");
+            if($("#banner .d1").length>1)
+            {
+                $("#banner_id li").eq(0).addClass("nuw");
+                function Marquee33(){
+                    bn_id2 = bn_id+1;
+                    if(bn_id2>$("#banner .d1").length-1)
+                    {
+                        bn_id2 = 0;
+                    }
+                    $("#banner .d1").eq(bn_id).css("z-index","2");
+                    $("#banner .d1").eq(bn_id2).css("z-index","1");
+                    $("#banner .d1").eq(bn_id2).show();
+                    $("#banner .d1").eq(bn_id).fadeOut("slow");
+                    $("#banner_id li").removeClass("nuw");
+                    $("#banner_id li").eq(bn_id2).addClass("nuw");
+                    bn_id=bn_id2;
+                };
+                MyMar33=setInterval(Marquee33,speed33);
+                $("#banner_id li").click(function(){
+                    var bn_id3 = $("#banner_id li").index(this);
+                    if(bn_id3!=bn_id&&qhjg==1)
+                    {
+                        qhjg = 0;
+                        $("#banner .d1").eq(bn_id).css("z-index","2");
+                        $("#banner .d1").eq(bn_id3).css("z-index","1");
+                        $("#banner .d1").eq(bn_id3).show();
+                        $("#banner .d1").eq(bn_id).fadeOut("slow",function(){qhjg = 1;});
+                        $("#banner_id li").removeClass("nuw");
+                        $("#banner_id li").eq(bn_id3).addClass("nuw");
+                        bn_id=bn_id3;
+                    }
+                })
+                $("#banner_id").hover(
+                    function(){
+                        clearInterval(MyMar33);
+                    }
+                    ,
+                    function(){
+                        MyMar33=setInterval(Marquee33,speed33);
+                    }
+                )
+            }
+            else
+            {
+                $("#banner_id").hide();
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="top">
+    <div id="menu">
+        <div id="logo"><a href="index"><img src="images/logo.jpg" alt="Lera-logo" /></a></div>
+        <p>lvy.ying@team-tool.com | 客服中心　EN | <a href="cn">中文</a></p>
+        <ul class="abeam">
+            <li class="menubjLast abeamLi"><a href="news">NEWS</a></li>
+            <li class="menubj abeamLi"><a href="whyus">WHY US</a></li>
+            <li class="menubj abeamLi"><a href="about">ABOUT</a></li>
+            <li class="menubjhome abeamLi">
+                <p class="productsHover" >PRODUCTS</p>
+                <ul class="erect">
+                    <li class="erectLi"><a href="merchandise?cat_id=12" title="LERA-20V Li-ion">20V Li-ion</a></li>
+                    <li class="erectLi"><a href="merchandise?cat_id=13" title="LERA-28V li-ion">28V li-ion</a></li>
+                    <li class="erectLi"><a href="merchandise?cat_id=14" title="LERA-R1 40V Brushless Li-ion">R1 40V Brushless Li-ion</a></li>
+                    <li class="erectLi"><a href="merchandise?cat_id=15" title="LERA-R3S 40V Li-ion">R3S 40V Li-ion</a></li>
+                    <li class="erectLi"><a href="merchandise?cat_id=16" title="LERA-S1 62V Li-ion">S1 62V Li-ion</a></li>
+                    <li class="erectLi"><a href="merchandise?cat_id=17" title="LERA-L1 84V Li-ion">L1 84V Li-ion</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    $(".menubjhome").mouseover(function () {
+        $(".erect").css("display",'block');
+    });
+    $(".menubjhome").mouseout(function () {
+        $(".erect").css("display",'none');
+    });
+</script>
+<style type="text/css">
+    *{margin:0;padding:0;list-style-type:none;}
+    a,img{border:0;}
+    body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
+    .banner{height:570px;overflow:hidden;}
+    .banner .d1{width:100%;height:562px;display:block;position:absolute;}
+    .banner .d2{width:100%;height:30px;clear:both;position:absolute;z-index:100;left:0px;top:580px;}
+    .banner .d2 ul{float:left;position:absolute;left:50%;top:0;margin:0 0 0 -96px;display:inline;}
+    .banner .d2 li{width:27px;height:100px;overflow:hidden;cursor:pointer;background:url(images/img1.png) no-repeat center;float:left;margin:0 3px;display:inline;}
+    .banner .d2 li.nuw{background:url(images/img1_1.png) no-repeat center;}
+</style>
+<div class="banner" id="banner" >
+    <a href="http://www.lera.com.cn/products" class="d1" title="" style="background:url(uploads/image/20180611/20180611173634_80853.jpg) center no-repeat;" target="_blank"></a>
+    <a href="" class="d1" title="" style="background:url(uploads/image/20180605/20180605145404_57768.jpg) center no-repeat;" target="_blank"></a>
+    <a href="http://www.lera.com.cn/detail?id=17" class="d1" title="" style="background:url(uploads/image/20180611/20180611173625_31777.jpg) center no-repeat;" target="_blank"></a>
+    <a href="" class="d1" title="" style="background:url(uploads/image/20180903/20180903170026_68548.jpg) center no-repeat;" target="_blank"></a>
+    <div class="d2" id="banner_id">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">banner()</script>
+<!--<script type="text/javascript">-->
+<!--	window.onload = function () {-->
+<!--		var screenWidth = document.body.clientWidth;-->
+<!--		var imgHeight = screenWidth/2.5;-->
+<!--		var bannerHeight = imgHeight*3;-->
+<!--		$("#banner").height(bannerHeight);-->
+<!--		$(".banner img,#bannerImg").height(imgHeight);-->
+<!--	}-->
+<!--</script>-->
+<div style="text-align:center;clear:both;">
+    <div id="centerwell">
+        <ul >
+            <li>
+                <h3><img src="images/left.jpg" alt="LERA-Li-ion 20V"></h3>
+                <div class="hot_content">
+                    <div class="hot_left"><a href="javascript:void(0);"><img src="images/pic1.jpg" alt="LERA-Clea faster better And easier"></a></div>
+
+                    <div class="wenben">
+                        <h2><span>Li-ion</span> 20V</h2>
+                        <P class="sm">
+                            20 Volt range is very attractive and promising for owner of smaller garden .
+                            It takes advantage of the lithium-ion battery technology to use in the garden, light weight, eco friendly, easy to use. The battery pack can be used with all 20 Volt series.
+                        </P>
+                        <p class="more"><a href="pro.php?cat_id=12">Learn More</a></p>
+                    </div>
+
+            </li>
+            <li>
+                <h3><img src="images/left1.jpg" alt="LERA-Li-ion 28V"></h3>
+                <div class="hot_content">
+                    <div class="hot_left"><a href="javascript:void(0);"><img src="images/pic2.jpg" alt="LERA-Clean without a doubt"></a></div>
+                    <div class="wenben">
+                        <h2><span>Li-ion</span> 28V</h2>
+                        <P class="sm">The 28 volt series aims to owners with small and medium size  garden.
+                            This series provides owners with the robust design of the machine, the powerful motors and battery.
+
+                        </P>
+                        <p class="more"><a href="pro.php?cat_id=13">Learn More</a></p>
+                    </div>
+
+            </li>
+            <li>
+                <h3><img src="images/left2.jpg" alt="LERA-R1 40V"></h3>
+                <div class="hot_content">
+                    <div class="hot_left"><a href="javascript:void(0);"><img src="images/pic3.jpg" alt="LERA-Cleaner and more powerful"></a></div>
+                    <div class="wenben">
+                        <h2><span>R1</span> 40V</h2>
+                        <P class="sm">Do you have a higher requirement? Then your choose of 40V series is exactly correct.
+                            It is not only one of the most powerful main items for LERA, but also the scope of application is very wide. Only with a battery pack can operate a variety of equipment.
+
+
+                        </P>
+                        <p class="more"><a href="pro.php?cat_id=14">Learn More</a></p>
+                    </div>
+
+            </li>
+            <li>
+                <h3><img src="images/left3.jpg" alt="LERA-RS3 40V"></h3>
+                <div class="hot_content">
+                    <div class="hot_left"><a href="javascript:void(0);"><img src="images/pic4.jpg" alt="LERA-Strong Power. More solution and first class performance"></a></div>
+                    <div class="wenben">
+                        <h2><span>R3S</span> 40V</h2>
+                        <P class="sm">ONE FOR ALL! R3S The entire series you need as long as a battery pack to achieve the operation of all tools. This is the third generation LERA 40V series, the whole weight is more lightweight, allowing users to operate more convenient in use.
+                        </P>
+                        <p class="more"><a href="pro.php?cat_id=15">Learn More</a></p>
+                    </div>
+            </li>
+            <li>
+                <h3><img src="images/left4.jpg" alt="LERA-S1 62V"></h3>
+                <div class="hot_content">
+                    <div class="hot_left"><a href="javascript:void(0);"><img src="images/pic5.jpg" alt="LERA-S1 62V series. Technology innovation power"></a></div>
+                    <div class="wenben">
+                        <h2><span>S1</span> 62V</h2>
+                        <P class="sm">62V series of high-voltage products, more professional, more powerful!
+                        </P>
+                        <p class="more"><a href="#pro.php?cat_id=16">Learn More</a></p>
+                    </div>
+
+            </li>
+
+            <li>
+                <h3><img src="images/left5.jpg" alt="LERA-L1 84V"></h3>
+                <div class="hot_content">
+                    <div class="hot_left"><a href="javascript:void(0);"><img src="images/pic6.jpg" alt="LERA-L1 84V series. Technology innovation power"></a></div>
+                    <div class="wenben">
+                        <h2><span>L1</span> 84V</h2>
+                        <P class="sm">You have higher requirements? Please choose 84V series since this is more professional. Worth having it! </P>
+                        <p class="more"><a href="pro.php?cat_id=17">Learn More</a></p>
+                    </div>
+
+            </li>
+        </ul>
+
+    </div>
+    <div id="about">
+        <div class="wp">
+            <ul class="list">
+                <li>
+                    <a href="whyus#team" title="LERA-Research and development"><img src="images/ab1.jpg" alt="LERA-Research and development" class="xwcms"/></a><div class="bmbox"><p>RESEARCH AND <span>DEVELOPMENT</span></p></div>
+                </li>
+                <li>
+                    <a href="whyus#white" title="LERA-Production"><img src="images/ab2.jpg" alt="LERA-Production" class="xwcms"/></a><div class="bmbox1"><p>PRODUCTION</p></div>
+                </li>
+                <li>
+                    <a href="whyus#teambt" title="LERA-Quality"><img src="images/ab3.jpg" alt="LERA-Quality" class="xwcms"/></a><div class="bmbox"><p>QUALITY</p></div>
+                </li>
+                <li>
+                    <a href="whyus#team" title="LERA-Team"><img src="images/ab4.jpg" alt="LERA-Team" class="xwcms"/></a><div class="bmbox1"><p>TEAM</p></div>
+                </li>
+                <li>
+                    <a href="whyus#white" title="LERA-Train"><img src="images/ab5.jpg" alt="LERA-Train" class="xwcms"/></a><div class="bmbox"><p>TRAIN</p></div>
+                </li>
+                <li>
+                    <a href="whyus#teambt" title="LERA-Corporate"><img src="images/ab6.jpg" alt="LERA-Corporate" class="xwcms"/></a><div class="bmbox1"><p>CORPORATE <span>CULTURE</span></p></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--
+    <div id="brand">
+     <a href="about.php"><img src="images/brand.jpg" alt="brand Story" /></a>
+    </div>
+    -->
+    <div id="footerny">
+        <div class="footText">
+            <p>Copyright ©2013-2018 lera All Rights Reserved.LERA TECHNOLOGY Version 1.0.0</p>
+            <p>ADDRESS：宁波市奉化龙潭村龙潭路398号 CONTACT US：lvy.ying@team-tool.com JOIN US：<a class="joinA" href="join">YOU ARE WELCOME TO LERA </a></p>
+            <p>RECORD INFORMATION：浙ICP备18018707号-1</p>
+        </div>
+
+    </div><!--	<div id="footer">-->
+    <!--		-->
+    <!--	</div>-->
+    <script type="text/javascript">
+        $(function () {
+            $(".nav_item").removeClass("active");
+            $("#nav_index").addClass("active");
+
+            var $centerwell_first = $('#centerwell li:first');
+            $centerwell_first.animate({ width: '74%' }, 300);
+            $centerwell_first.find('h3').addClass("on");
+
+            $('#centerwell li').click(function () {
+                if (!$(this).is(':animated')) {
+                    $(this).animate({ width: '74%' }, 300).siblings().animate({ width: '5%' }, 300);
+
+                    $('#centerwell li h3').removeClass("on");
+                    $(this).find("h3").addClass("on");
+                    $(this).find("h3").addClass("on");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

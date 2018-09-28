@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>观察者模式来切换页面风格</title>
+
+    <style>
+        div{
+            height: 200px;
+            width:300px;
+            border: 2px solid;
+            padding: 2px;margin-top:5px ;
+        }
+    </style>
+</head>
+<body>
+<h1>观察者模式切换页面风格</h1>
+<select name="" id="" >
+    <option value="male">男士风格</option>
+    <option value="female">女士风格</option>
+
+</select>
+<div id="content">我是内容</div>
+<div id="ad">我是广告</div>
+<div id="study">学习</div>
+
+<script>
+    //观察者模式来切换
+    //服务端 被观察者
+    var sel = document.getElementsByTagName('select')[0];
+    //添加对象 ，用于存放观察者
+    sel.obsever = {};
+    //添加观察者方法
+    sel.add = function (key,obj) {
+        sel.obsever[key] = obj;
+    }
+    //删除观察者方法
+    sel.del = function (key) {
+        delete this.obsecer[key];
+    }
+    //发生变化通知所有观察者跟着改变
+    sel.onchange = function(){
+        for (var key in this.obsever) {
+            this.obsever[key].update(this);
+        }
+    }
+
+    //观察者
+    var content = document.getElementById('content');
+    var ad = document.getElementById('ad');
+    content.update = function (obsever){
+        if(obsever.value == 'male'){
+            this.style.backgroundColor = 'gary';
+        } else if(obsever.value=='female'){
+            this.style.backgroundColor = 'pink';
+
+        }
+    }
+
+    ad.update = function(obsever){
+        if(obsever.value == 'male'){
+            this.innerHTML = "汽车";
+        } else if(obsever.value=='female'){
+            this.innerHTML = '化妆品';
+        }
+    }
+    //添加观察者
+
+    sel.add('content',content);
+    sel.add('ad',ad);
+//这个时候需要添加一个study 只需要增加 study.update 以及多添加一个观察者
+    //添加观察者
+    var study = document.getElementById('study');
+    sel.add('study',study);
+    study.update = function(obsever){
+        if(obsever.value == 'male'){
+            this.innerHTML = "学习计算机";
+        } else if(obsever.value=='female'){
+            this.innerHTML = '学习美容';
+        }
+    }
+
+
+
+
+
+</script>
+</body>
+</html>
