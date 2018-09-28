@@ -24,9 +24,9 @@ class SingleLinkedList
 {
     public $header;
 
-    public function __construct($data)
+    public function __construct()
     {
-        $this->header = new Node($data);
+        $this->header = new Node(null);
     }
 
     /**
@@ -35,10 +35,11 @@ class SingleLinkedList
      */
     public function lpush($data)
     {
-        $cur  = $this->header;
+        $cur  = $this->header->next;
         $newheader = new Node($data);
         $newheader->next = $cur;
-        $this->header = $newheader;
+        $this->header->next = $newheader;
+
     }
 
     /**
@@ -47,12 +48,16 @@ class SingleLinkedList
      */
     public function rpush($data)
     {
-        $cur = $this->header;
+        $newheader = new Node($data);
+
+        $cur = $this->header->next;
+
         while ($cur->next!=null)
         {
             $cur = $cur->next;
         }
-        $cur->next = new Node($data);
+        $cur->next = $newheader;
+
     }
 
     /**
@@ -62,7 +67,7 @@ class SingleLinkedList
      */
     public  function push($n,$data)
     {
-        $cur = $this->header;
+        $cur = $this->header->next;
         $j = 0;//计数器
         if($n==0){
             $this->lpush($data);
@@ -89,7 +94,7 @@ class SingleLinkedList
      * @return mixed
      */
     public function del($n){
-        $cur = $this->header;
+        $cur = $this->header->next;
         if($n<0){
             echo '参数不合法';exit;
         }
@@ -118,19 +123,19 @@ class SingleLinkedList
 
     public  function  delAll()
     {
-        $cur = $this->header;
+        $cur = $this->header->next;
         while ($cur->next != null)
         {
             $a =$cur->next;
             unset($cur);
             $cur = $a;
         }
-        $this->header = null;
+        $this->header = new Node(null);
     }
 
     public function show()
     {
-       $cur = $this->header;
+       $cur = $this->header->next;
        if($cur==null){
            echo "kong ";
        }else{
@@ -147,10 +152,11 @@ class SingleLinkedList
     //
 
 }
-$a  =  new SingleLinkedList('李四');
+$a  =  new SingleLinkedList();
 $a->lpush('张三');
 $a->rpush('王五');
-$a->push('3','龚六');
-$a->push('4','赵七');
+$a->push('1','龚六');
+$a->push('2','赵七');
+$a->del('4');
 $a->delAll();
 $a->show();
