@@ -135,7 +135,7 @@ class Josephu
             }
             echo PHP_EOL;
             echo "出去的小朋友的编号为".$this->head->no;
-            
+
             $this->head = $this->head->next;
             $tail->next = $this->head;
 

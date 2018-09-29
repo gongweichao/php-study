@@ -6,113 +6,113 @@
  * Time: 14:36
  */
 
-/**
- * Class Node
- * 定义链表节点
- */
-class Node
+class Hero
 {
-    /**
-     * @var 前指针
-     */
+    //前驱
     public $pre = null;
-    /**
-     * @var 后指针
-     */
-    public $next= null;
-    /**
-     * @var 节点数
-     */
-    public $key= null;
-    /**
-     * @var 节点值
-     */
-    public $data= null;
-
-   public function __construct($key ,$data)
+    //后继
+    public $next = null;
+    public $no;
+    public $name;
+    public function __construct($no='',$name='')
     {
-        $this->data = $data;
-        $this->key =$key;
-        $this->pre = null;
-        $this->next = null;
+        $this->no = $no;
+        $this->name = $name;
     }
 }
-
 
 class DoublyLinkedList
 {
-    /**
-     * @var 头节点
-     */
     public $head;
-    /**
-     * @var 尾节点
-     */
-    public $tail;
-    /**
-     * @var 当前节点
-     */
-    public $current;
-    /**
-     * @var 节点长度
-     */
-    public $len;
 
-    /**
-     * DoublyLinkedList constructor.\
-     * 链表的初始化
-     */
     public function __construct()
     {
-        $this->head = $this->tail= new StdClass;
-        $this->len = 0;
+        $this->head = new Hero();
     }
 
     /**
-     * @param $key
-     * @param $data
-     * 头部插入
+     * @param $no 英雄排名
+     * @param $name 英雄名字
      */
-    public function lpush($key,$data)
-    {
-
-        $newNode =  new Node($key,$data);
-
-        $newNode->next = $this->head;
-        $this->head->pre->next = $newNode;
-        $this->head->pre= $newNode;
-        $this->head = $newNode;
-        $this->len++;
-        if($this->tail === NULL){
-            $this->tail = $this->head;
-        }
-        //var_dump($this->head->pre->next);
-    }
-
-    /**
-     * @param $key
-     * @param $data
-     * 尾部插入
-     */
-    public function rpush($key,$data)
-    {
-
-    }
-
-    public function getAll(){
-        if($this->len == 0){
-            echo '链表为空';
-        } else {
-            $tmp = $this->head;
-            while($tmp !== NULL){
-                var_dump($tmp->key, $tmp->data);
-                $tmp = $tmp->next;
+    public function addHero($no,$name){
+        $newHero = new Hero($no,$name);
+        $cur =$this->head;
+        $isExits = false;
+        while ($cur->next !=null)
+        {
+            if($cur->next->no>$newHero->no){
+                break;
+            }else if($cur->next->no==$newHero->no){
+                $isExits = true;
+                echo "已存在排名";
             }
+            $cur=$cur->next;
         }
+        if(!$isExits)
+        {
+            if($cur->next !=null){
+                $newHero->next = $cur->next;
+
+            }
+            $newHero->pre = $cur;
+
+            if($cur->next !=null){
+                $cur->next->pre = $newHero;
+            }
+            $cur->next = $newHero;
+        }
+
     }
+
+    public function showHero()
+    {
+        $cur = $this->head->next;
+        while ($cur->next != null)
+        {
+            echo PHP_EOL;
+            echo $cur->name.'排名'.$cur->no;
+            $cur = $cur->next;
+        }
+        echo PHP_EOL;
+        echo $cur->name.'排名'.$cur->no;
+    }
+     public function delHero($no)
+     {
+        $cur = $this->head->next;
+        $isExits = false;
+        while($cur!=null)
+        {
+            if($cur->no == $no)
+            {
+                $isExits = true;
+                break;
+            }
+
+            $cur = $cur->next;
+        }
+        if($isExits)
+        {
+            if($cur->next!=null){
+                $cur->next->pre = $cur->pre;
+            }
+           $cur->pre->next=$cur->next;
+
+            echo PHP_EOL.'要删除的英雄编号是'.$cur->no;
+        }else{
+            echo PHP_EOL;
+            echo '没有改英雄';
+        }
+     }
+
 }
 
 $a = new DoublyLinkedList();
-$a->lpush('1','张三');
-$a->getAll();
+$a->addHero(1,'宋江');
+$a->addHero(2,'卢俊义');
+$a->addHero(6,'林冲');
+$a->addHero(3,'吴用');
+$a->delHero(3);
+$a->showHero();
+
+
 
