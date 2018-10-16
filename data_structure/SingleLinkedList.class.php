@@ -26,6 +26,7 @@ class SingleLinkedList
 
     public function __construct()
     {
+        //初始化一个头结点
         $this->header = new Node(null);
     }
 
@@ -35,9 +36,13 @@ class SingleLinkedList
      */
     public function lpush($data)
     {
+        //头结点不能动的   $cur 是不是就是头结点外的第一个元素
         $cur  = $this->header->next;
+        //实例化一个新的节点 从头插入
         $newheader = new Node($data);
+        //因为头部插入 是不是就是 新节点的next 要指向之前的第一个元素
         $newheader->next = $cur;
+        //头结点指向新节点
         $this->header->next = $newheader;
 
     }
